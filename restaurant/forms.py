@@ -1,8 +1,8 @@
 from django import forms
-from .models import Review
+from .models import Booking
 
 
-class ReviewForm(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
-        model = Review
-        fields = ('body', )
+        model = Booking
+        fields = ('name','email', 'phone', 'guests', 'message', )
