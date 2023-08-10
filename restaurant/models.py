@@ -5,19 +5,19 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Booking(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.TextField()
     guests = models.IntegerField(default='')
-    message= models.TextField()
+    message = models.TextField()
 
 
     def __str__(self):
-     return self.name
+        return self.name
 
 
 class Review(models.Model):
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=50)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
