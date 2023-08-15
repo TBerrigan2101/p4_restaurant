@@ -2,11 +2,10 @@
 
 {% block content %}
 
-<h1>Welcome to Umai</h1>
+<h1 class="display-4" align-center>Welcome to Umai</h1>
 
 <form method="POST">
     {{form}}
     {% csrf_token %}
-    <button type="submit">Submit</button>
 
 {%endblock%}

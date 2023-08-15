@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
+
+{% block content %}
+<h1>Make a booking with us</h1>
 <form method="POST">
     <div class="form-group">
     {{form}}
     {% csrf_token %}
-    <button type="submit">Submit</button>
+    <button type="submit" class="button">Submit</button>
     </div>
 </form>    
 
