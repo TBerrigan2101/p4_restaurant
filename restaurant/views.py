@@ -7,13 +7,15 @@ from .forms import BookingForm
 
 
 # Create your views here.
+class IndexPage(ListView):
+    model = Booking
+    template_name = 'index.html'
 
 
 class BookTable(CreateView):
     form_class = BookingForm
     template_name = 'booking.html'
     success_url = '/'
-
 
 
 class LeaveReview():
