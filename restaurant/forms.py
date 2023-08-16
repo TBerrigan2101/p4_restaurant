@@ -1,11 +1,11 @@
 from django import forms
-from .models import Booking
+from .models import Booking, Review
 
 
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ('name','email', 'phone', 'guests', 'message', )
+        fields = ('name', 'email', 'phone', 'guests', 'message', )
 
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -15,3 +15,17 @@ class BookingForm(forms.ModelForm):
             'message': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('name', 'title', 'body', )
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'body': forms.TextInput(attrs={'class': 'form-control'}),
+
+        }
+

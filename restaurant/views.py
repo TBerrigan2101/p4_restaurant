@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic import ListView
 from django.http import HttpResponseRedirect
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, ReviewForm
 
 
 # Create your views here.
@@ -18,5 +18,8 @@ class BookTable(CreateView):
     success_url = '/'
 
 
-class LeaveReview():
-    template_name = "review.html"
+class LeaveReview(CreateView):
+    form_class = ReviewForm
+    template_name = 'review.html'
+    success_url = '/'
+

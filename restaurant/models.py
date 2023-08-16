@@ -19,6 +19,7 @@ class Booking(models.Model):
 class Review(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
+    title = models.TextField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
  

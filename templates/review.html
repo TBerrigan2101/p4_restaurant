@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Umai - Leave a Review</title>
-</head>
-<body>
-<h1>Leave a Review</h1>
+{% extends 'base.html' %}
 
 
 
-</body>
-</html>
+{% block content %}
+<h1>Reviews of Umai</h1>
+<form method="POST">
+    <div class="form-group">
+    {{form}}
+    {% csrf_token %}
+    <button type="submit" class="button">Submit</button>
+    </div>
+</form>    
+
+{%endblock%}

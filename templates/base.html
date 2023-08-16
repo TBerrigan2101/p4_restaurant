@@ -36,11 +36,17 @@
                   <a class="nav-link" href="#">Menu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Reservations</a>
+                  <a class="nav-link" href={% url 'booking' %}>Reservations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
+                    <a class="nav-link" href={% url 'review' %}>Reviews</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href={% url 'booking' %}>Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href={% url 'review' %}>Login</a>
+                    </li>  
               </ul>
             </div>
           </nav> 
@@ -66,7 +72,7 @@
         </main>
 
         <!-- Footer -->
-        <<!-- Remove the container if you want to extend the Footer to full width. -->
+        <!-- Remove the container if you want to extend the Footer to full width. -->
     <!-- Footer -->
     <footer class="footer text-left text-lg-start text-white">
       <!-- Grid container -->
