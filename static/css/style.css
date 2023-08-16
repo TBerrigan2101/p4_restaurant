@@ -57,6 +57,13 @@ h1 {
 
 }
 
+h2 {
+  font-weight: 300;
+  text-align: left;
+  color: #d9534f;
+
+}
+
 .button {
   background-color: #282727;
   color: white;
@@ -66,4 +73,8 @@ h1 {
 .button:hover {
   background-color: #E84610;  
   color: white;
+}
+
+.link {
+  color: #d9534f;
 }
