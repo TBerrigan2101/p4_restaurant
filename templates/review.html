@@ -1,23 +1,29 @@
 {% extends 'base.html' %}
 
 
-
 {% block content %}
 
+{% load crispy_forms_tags %}
+
+
 <div class="container">
-    <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
-        <h1>Reviews of Umai</h1>
-            <form method="POST">
-                <div class="form-group">
-                {{form}}
-                {% csrf_token %}
-                <button type="submit" class="button">Submit</button>
-                </div>
-            </form>    
-      </div>  
-    </div>     
-</div>    
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      {% if user.is_authenticated %}
+
+
+      <h3>Leave a Review:</h3>
+      <p>Posting as: {{ user.username }}</p>
+      <form method="POST" style="margin-top: 1.3em;">
+          {{ review_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="button">Submit</button>
+      </form>
+      {% endif %}
+
+  </div>
+</div>
+</div>
 
 
 {%endblock%}

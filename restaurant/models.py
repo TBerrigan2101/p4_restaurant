@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 class Booking(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
-    phone = models.TextField()
+    phone = models.CharField(max_length=50)
     guests = models.IntegerField(default='')
     message = models.TextField()
 
@@ -19,7 +19,7 @@ class Booking(models.Model):
 class Review(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
-    title = models.TextField()
+    title = models.CharField(max_length=200)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
  
