@@ -31,6 +31,7 @@ class Booking(models.Model):
     guests = models.IntegerField(default='')
     date = models.DateField(default=datetime.now)
     message = models.TextField()
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.name

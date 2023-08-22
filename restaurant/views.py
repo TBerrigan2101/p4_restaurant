@@ -4,13 +4,14 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Booking, Review, Menu
 from .forms import BookingForm, ReviewForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
-
+@login_required(login_url="accounts/login")
 def view_booking(request):
-    bookings = Booking.objects.all()
+    bookings = Booking.objects.filter(created_by=request.user)
     context = {
         'bookings': bookings
         }
@@ -21,7 +22,9 @@ def add_booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
+            booking = form.save(commit=False)
+            booking.created_by = request.user
+            booking.save()
             return redirect('view_booking')
     form = BookingForm()
     context = {
@@ -42,7 +45,7 @@ def edit_booking(request, booking_id):
         'form': form
     }
     return render(request, 'edit_booking.html', context)
-
+ 
 
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
