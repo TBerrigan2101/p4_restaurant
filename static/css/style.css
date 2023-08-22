@@ -2,10 +2,46 @@ body {
   background-color: #F9FAFC;
 }
 
+.jumbotron {
+  background-color: transparent;
+}
+
 .hero-image-home {
   height: 50vh;
 
   background: url('../images/food3.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.hero-image-reviews {
+  height: 50vh;
+
+  background: url('../images/sushi3.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.hero-image-register {
+  height: 50vh;
+
+  background: url('../images/sushi4.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,7 +64,7 @@ body {
 .hero-image-booking {
   height: 50vh;
 
-  background: url('../images/food1.jpg') no-repeat center center fixed;
+  background: url('../images/sushi2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -101,4 +137,16 @@ h2 {
 
 .link {
   color: #d9534f;
+}
+
+.display-4 {
+  color: #ffffff;
+}
+
+.lead {
+  color: #ffffff;
+}
+
+.card {
+  border: none;
 }
