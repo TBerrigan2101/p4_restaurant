@@ -7,20 +7,20 @@
 
 {% block content %}
 
-<div class="container-fluid hero-image-booking">
+<div class="container-fluid hero-image-account">
   <div class="opaque-overlay">&nbsp;</div>
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-4">Join Us at Umai</h1>
-                      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <h1 class="display-1">Mata zehi!</h1>
+                      <p class="lead">We hope to see you soon!</p>
               </section>
           </div>    
   </div>    
 </div>
 
 
-<div class="container">
+<div class="container container-padding">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h1>{% trans "Sign Out" %}</h1>
@@ -32,7 +32,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
         {% endif %}
-        <button type="submit">{% trans 'Sign Out' %}</button>
+        <button class="btn btn-outline-dark" type="submit">{% trans 'Sign Out' %}</button>
       </form>
 
     </div>

@@ -11,14 +11,13 @@
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-4">Join Us at Umai</h1>
-                      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <h1 class="display-1">Join Us at Umai</h1>
               </section>
           </div>    
   </div>    
 </div>
 
-<div class="container">
+<div class="container container-padding">
 
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
@@ -34,7 +33,17 @@
     <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
         <h1>View Bookings</h1>
-        <table>
+        <table class="table">
+          <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Guests</th>
+          <th scope="col">Message/Request</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
         {% for booking in bookings %}
         <tr>
           <td>{{ booking.name }}</td>
@@ -42,19 +51,20 @@
           <td>{{ booking.guests }}</td>
           <td>{{ booking.message }}</td>
           <td>
-            <a href="edit/{{ booking.id }}"><button>Edit</button></a>
+            <a href="edit/{{ booking.id }}"><button class="btn btn-outline-danger">Edit</button></a>
           </td>
           <td>
-            <a href="delete/{{ booking.id }}"><button>Cancel</button></a>
+            <a href="delete/{{ booking.id }}"><button class="btn btn-outline-danger">Cancel</button></a>
           </td>
         </tr>
         {% endfor %}
         </table>
 
-        <a href = "add_booking">Add a Booking</a>
+        <a href = "add_booking" class="btn btn-outline-dark">Add a Booking</a>
       </div>  
     </div>  
     {% endif %}   
 </div>    
+
 
 {%endblock%}

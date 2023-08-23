@@ -9,8 +9,8 @@
         <div class="row">
                 <div class="col-12">
                     <section class="jumbotron text-center">
-                        <h1 class="display-4">Welcome to Umai!</h1>
-                            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <h1 class="display-1">Welcome to Umai!</h1>
+                            <p class="lead white">The home of authentic Japanese Sushi in Dublin</p>
                     </section>
                 </div>    
         </div>      
@@ -21,35 +21,68 @@
     <div class="row">
             <!-- Menu Entries Column -->
         <div class="col-12 mt-3 left">
-            <h1>Our Current Menu</h1>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h1 class="display-4">Our Current Menu</h1>
+            <p class="lead">At Umai we pride ourselves on using the best Japanese and Irish ingredients to create sushi like no other. Our set menu of six dishes will provide you with the full sushi experience from the simplest origins to modern takes made right in front of you as you dine with us.</p>
             <div class="row">
-            {% for menu in menu_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
+                        <img src="static/images/sashimi.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <div class="image-container">
-                                    {% if "placeholder" in menu.featured_image.url %}
-                                    <img class="card-img-top"
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                    {% else %}
-                                    <img class="card-img-top" src=" {{ menu.featured_image.url }}">
-                                    {% endif %}
-                            </div>
-                                    <h2 class="card-title">{{ menu.title }}</h2>
-                                    <p class="card-text">{{ menu.excerpt }}</p>
-                                </a>
-                            </div>
+                            <h3>Sashimi</h3>
+                            <p class="card-text"> Raw seafood delicately cut into thin slices. Seafood at its purest.</p>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-                <div class="row">
-                    {% endif %}
-                    {% endfor %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/images/nigri.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Nigri</h3>
+                            <p class="card-text">Hand-pressed bed of rice topped with a single piece of glazed seafood</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/images/maki.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Maki</h3>
+                            <p class="card-text"> Sushi rice with a variety of fillings at the center wrapped in a sheet of nori. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/images/uramaki.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Uramaki</h3>
+                            <p class="card-text">Maki but in reverse. Sushi rice on the outside, followed by a sheet of nori and sushi filling at the center.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/images/temaki.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Temaki</h3>
+                            <p class="card-text"> A combination of veggies, seafood and sauces server in a cone-shaped nori sheet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="static/images/gunkan.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h3>Gunkan</h3>
+                            <p class="card-text">Sushi wrapped around a small bed of rice and a variety of toppings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
                 </div>
             </div>

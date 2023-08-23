@@ -7,25 +7,24 @@
 
 {% block content %}
 
-<div class="container-fluid hero-image-booking">
+<div class="container-fluid hero-image-account">
   <div class="opaque-overlay">&nbsp;</div>
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-4">Join Us at Umai</h1>
-                      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <h1 class="display-1">Welcome Back</h1>
               </section>
           </div>    
   </div>    
 </div>
 
-<div class="container">
+<div class="container container-padding">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h2>{% trans "Sign In" %}</h2>
 
-      <p>{% blocktrans %}Welcome back to the Umai members area. To make or manage a booking or leave a review, please log in. If you
-        have not created an account yet, then please join the Umai famile and <a class="link" href="{{ signup_url }}">sign up</a>
+      <p>{% blocktrans %}Welcome back to the Umai members area. To make or manage a booking, please log in. If you
+        have not created an account yet, then please join the Umai family and <a class="link" href="{{ signup_url }}">sign up</a>
         first.{% endblocktrans %}</p>
     </div>
   </div>
@@ -37,7 +36,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="button" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-outline-dark" type="submit">{% trans "Sign In" %}</button>
       </form>
     </div>
   </div>

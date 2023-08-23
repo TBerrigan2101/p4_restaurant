@@ -11,21 +11,21 @@
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-4">Join Us at Umai</h1>
+                  <h1 class="display-1">Join Us at Umai</h1>
                       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
               </section>
           </div>    
   </div>    
 </div>
 
-<div class="container">
+<div class="container container-padding">
     <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
         <h1>Add a Booking</h1>
         <form method="POST" action="add_booking">
         {{ form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="button">Submit</button>
+            <button type="submit" class="btn btn-outline-dark">Add Booking</button>
         </form>
       </div>  
     </div>     

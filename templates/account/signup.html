@@ -6,21 +6,19 @@
 
 {% block content %}
 
-<div class="container-fluid hero-image-register">
+<div class="container-fluid hero-image-account">
   <div class="opaque-overlay">&nbsp;</div>
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-4">Welcome to Umai!</h1>
-                      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                      <hr class="my-4">
-                      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <h1 class="display-1">Join the Umai Family!</h1>
+                      <p class="lead-white">Register an account with us to manage your Umai bookings and to keep up to date.</p>
               </section>
           </div>    
   </div>    
 </div>
 
-<div class="container">
+<div class="container container-padding">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h2>{% trans "Sign Up" %}</h2>
@@ -33,7 +31,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="button" type="submit">{% trans "Sign Up" %} &raquo;</button>
+        <button class="btn btn-outline-dark" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
   </div>
