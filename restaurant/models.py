@@ -7,6 +7,23 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+TIMES = (
+    ("3:00 PM", "3:00 PM"),
+    ("3:30 PM", "3:30 PM"),
+    ("4:00 PM", "4:00 PM"),
+    ("4:30 PM", "4:30 PM"),
+    ("5:00 PM", "5:00 PM"),
+    ("5:30 PM", "5:30 PM"),
+    ("6:00 PM", "6:00 PM"),
+    ("6:30 PM", "6:30 PM"),
+    ("7:00 PM", "7:00 PM"),
+    ("7:30 PM", "7:30 PM"),
+    ("8:00 PM", "8:00 PM"),
+    ("8:30 PM", "8:30 PM"),
+    ("9:00 PM", "9:00 PM"),
+    ("9:30 PM", "9:30 PM"),
+
+)
 
 class Menu(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -30,6 +47,7 @@ class Booking(models.Model):
     phone = models.CharField(max_length=50)
     guests = models.IntegerField(default='')
     date = models.DateField(default=datetime.now)
+    time = models.CharField(max_length=10, choices=TIMES, default="3 PM")
     message = models.TextField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
@@ -48,3 +66,13 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name

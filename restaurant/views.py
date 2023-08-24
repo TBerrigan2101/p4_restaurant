@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic.edit import CreateView
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Booking, Review, Menu
-from .forms import BookingForm, ReviewForm
+from .models import Booking, Review, Menu, Contact
+from .forms import BookingForm, ReviewForm, ContactForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -82,3 +82,9 @@ class LeaveReview(CreateView):
             },
         )
 
+class ContactUs(CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = 'contact.html'
+    success_url = '/'
+    

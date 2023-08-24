@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid hero-image-reviews">
+    <div class="opaque-overlay">&nbsp;</div>
+    <div class="row">
+            <div class="col-12">
+                <section class="jumbotron text-center">
+                    <h1 class="display-1">Reviews of Umai</h1>
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                </section>
+            </div>    
+    </div>    
+</div>
+  
+
+<div class="container container-padding">
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h1>Send us a Message</h1>
+        <form method="POST" action="contact">
+        {{ form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-dark">Send Message</button>
+        </form>
+      </div>  
+    </div>     
+</div>    
+
+
+{%endblock%}
