@@ -7,6 +7,8 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+# <----- Booking Models ----->
+
 TIMES = (
     ("3:00 PM", "3:00 PM"),
     ("3:30 PM", "3:30 PM"),
@@ -26,22 +28,6 @@ TIMES = (
 )
 
 
-class Menu(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-   
-    class Meta:
-        ordering = ["-created_on"]
-
-    def __str__(self):
-        return self.title
-
-
 class Booking(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -56,19 +42,23 @@ class Booking(models.Model):
         return self.name
 
 
+# <----- Review Models ----->
+
 class Review(models.Model):
     name = models.CharField(max_length=50)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
- 
+
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
         return f"Review {self.body} by {self.name}"
 
+
+# <----- Contact Models ----->
 
 class Contact(models.Model):
     name = models.CharField(max_length=50)
@@ -80,6 +70,19 @@ class Contact(models.Model):
         return self.name
 
 
+# <----- Menu Model (NOT IN USE) ----->
 
+class Menu(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    featured_image = CloudinaryField('image', default='placeholder')
+    excerpt = models.TextField(blank=True)
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
+    class Meta:
+        ordering = ["-created_on"]
 
+    def __str__(self):
+        return self.title

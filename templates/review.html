@@ -5,13 +5,15 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Hero Image Styling -->
+
 <div class="container-fluid hero-image-reviews">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="row">
             <div class="col-12">
                 <section class="jumbotron text-center">
-                    <h1 class="display-1">Reviews of Umai</h1>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <h1 class="display-1 text-white">Reviews of Umai</h1>
+                        <p class="display-4 text-white">See what our guests are saying about our Sushi.</p>
                 </section>
             </div>    
     </div>    
@@ -19,40 +21,27 @@
   
 
 <div class="container container-padding">
-    <div class="row">
-        <div class="col-12">
-        <h3>Reviews:</h3>
-        <div class="card-body">
-        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-        {% for review in reviews %}
-        <div class="review" style="padding: 10px;">
-            <p class="font-weight-bold">
-                <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                {{ review.name }}
-                <span class=" text-muted font-weight-normal">
-                    <!-- The comment's created date goes here -->
-                    {{ review.created_on }}
-                </span> wrote:
-            </p>
-            <!-- The body of the comment goes before the | -->
+    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+    {% for review in reviews %}
+    <div class="comments">
+        <span class="display-4">
+             <!-- The body of the comment goes before the | -->
             {{ review.body | linebreaks }}
-        </div>
-        <!-- Our for loop ends here -->
-        {% endfor %}
-        </div>
-        </div>
-
-<div class="container container-padding">
-            <div class="row">
-              <div class="col-md-8 mt-3 offset-md-2">
-                <h2>Leave a Review</h2>
-          
-                <p>Want to leave a review? Then please <a class="link" href="{% url 'submit_review' %}">click here</a>
-            </div>
-          </div>
-        </div>  
-    </div>  
-</div>          
+            </span>
+            <p class="font-weight-bold red-brand text-uppercase">
+            <!-- The commenter's name goes here. -->
+            {{ review.name }}
+        </p>
+        <hr>
+    </div>
+    <!-- Our for loop ends here -->
+    {% endfor %}
+    <div>
+        <h2>Leave a Review</h2>
+        <p>Want to leave a review? Then please <a class="link" href="{% url 'submit_review' %}">click here</a>
+    </div>
+</div>  
+        
 
 
 {%endblock%}

@@ -6,22 +6,26 @@
 
 {% block content %}
 
+<!-- Hero Image Styling -->
+
 <div class="container-fluid hero-image-account">
   <div class="opaque-overlay">&nbsp;</div>
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-1">Join the Umai Family!</h1>
-                      <p class="lead-white">Register an account with us to manage your Umai bookings and to keep up to date.</p>
+                  <h1 class="display-1 text-white">Join the Umai Family!</h1>
+                  <p class="display-4 text-white">Register to manage your Umai bookings and to keep up to date.</p>
               </section>
           </div>    
   </div>    
 </div>
 
+<!-- Sign Up Form -->
+
 <div class="container container-padding">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h2>{% trans "Sign Up" %}</h2>
+      <h1 class="display-4"></h1>>{% trans "Sign Up" %}</h1>
 
       <p>{% blocktrans %}Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
       

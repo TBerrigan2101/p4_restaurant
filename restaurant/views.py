@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-# <----- Index Views -----> 
+# <----- Index Views ----->
 
 class IndexPage(CreateView):
     model = Booking
@@ -17,16 +17,16 @@ class IndexPage(CreateView):
     template_name = 'index.html'
 
 
-# <----- Review Views -----> 
+# <----- Review Views ----->
 
 def see_reviews(request):
     reviews = Review.objects.filter(approved=True).order_by("-created_on")
     context = {
         'reviews': reviews
         }
-    return render(request, 'review.html', context)  
-        
-        
+    return render(request, 'review.html', context)
+
+@login_required(login_url="accounts/login")
 def submit_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -39,10 +39,10 @@ def submit_review(request):
     context = {
         'review_form': form
     }
-    return render(request, 'submit_review.html', context)  
+    return render(request, 'submit_review.html', context)
 
 
-# <----- Booking Views -----> 
+# <----- Booking Views ----->
 
 @login_required(login_url="accounts/login")
 def view_booking(request):
@@ -65,7 +65,7 @@ def add_booking(request):
     context = {
         'form': form
     }
-    return render(request, 'add_booking.html', context)  
+    return render(request, 'add_booking.html', context)
 
 
 def edit_booking(request, booking_id):
@@ -80,7 +80,7 @@ def edit_booking(request, booking_id):
         'form': form
     }
     return render(request, 'edit_booking.html', context)
- 
+
 
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
@@ -88,7 +88,7 @@ def delete_booking(request, booking_id):
     return redirect('view_booking')
 
 
-# <----- Contact Views -----> 
+# <----- Contact Views ----->
 
 class ContactUs(CreateView):
     model = Contact
@@ -102,5 +102,3 @@ class MenuList(generic.ListView):
     queryset = Menu.objects.filter(status=1).order_by("-created_on")
     template_name = 'index.html'
     paginate_by = 6
-
-

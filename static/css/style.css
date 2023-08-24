@@ -43,7 +43,7 @@ body {
 .hero-image-reviews {
   height: 50vh;
 
-  background: url('../images/sushi3.jpg') no-repeat center;
+  background: url('../images/sushi4.jpg') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -59,7 +59,7 @@ body {
 .hero-image-register {
   height: 50vh;
 
-  background: url('../images/sushi4.jpg') no-repeat center;
+  background: url('../images/sushi1.jpg') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -149,13 +149,18 @@ h3 {
 }
 
 .display-1 {
-  color: #ffffff;
   font-weight: 100;
 }
 
+.display-2 {
+  font-weight: 100;
+}
+
+.display-3 {
+  font-weight: 100;
+}
 
 .display-4 {
-  color: #d9534f;
   font-weight: 100;
 }
 
@@ -166,12 +171,6 @@ h3 {
 .white {
   color: #ffffff;
 }
-
-
-.nav-link-hover {
-  color: #d9534f;
-}
-
 
 
 /* Components */

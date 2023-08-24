@@ -18,7 +18,7 @@ class BookingForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ('name','body', )
+        fields = ('name', 'body', )
 
 
 class ContactForm(forms.ModelForm):

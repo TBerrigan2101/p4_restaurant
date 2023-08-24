@@ -6,45 +6,46 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Hero Image Styling -->
+
 <div class="container-fluid hero-image-booking">
   <div class="opaque-overlay">&nbsp;</div>
   <div class="row">
           <div class="col-12">
               <section class="jumbotron text-center">
-                  <h1 class="display-1">Join Us at Umai</h1>
+                  <h1 class="display-1 text-white">Join Us at Umai</h1>
+                  <p class="display-4 text-white">We look forward to seeing you.</p>
               </section>
           </div>    
   </div>    
 </div>
 
 <div class="container container-padding">
-
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-    </div>
-  </div>  
-    
-  {% if user.is_authenticated %}
     <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
-        <h1>View Bookings</h1>
-        <table class="table">
-          <thead class="thead-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Date</th>
-          <th scope="col">Time</th>
-          <th scope="col">Guests</th>
-          <th scope="col">Message/Request</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-        </thead>
+        <p class="lead">On this page you can view your current bookings and if necessary, make changes.</p>
+      </div>
+    </div>  
+
+    
+<!-- Bootstrap Styled Table Showing Users Booking Options -->
+
+    {% if user.is_authenticated %}
+    <div class="row">
+      <div class="col-md-8 mt-3 offset-md-2">
+        <h1 class="display-4">View Bookings</h1>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Message/Request</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
         {% for booking in bookings %}
         <tr>
           <td>{{ booking.name }}</td>
@@ -52,12 +53,8 @@
           <td>{{ booking.time }}</td>
           <td>{{ booking.guests }}</td>
           <td>{{ booking.message }}</td>
-          <td>
-            <a href="edit/{{ booking.id }}"><button class="btn btn-outline-danger">Edit</button></a>
-          </td>
-          <td>
-            <a href="delete/{{ booking.id }}"><button class="btn btn-outline-danger">Cancel</button></a>
-          </td>
+          <td><a href="edit/{{ booking.id }}"><button class="btn btn-outline-danger">Edit</button></a></td>
+          <td><a href="delete/{{ booking.id }}"><button class="btn btn-outline-danger">Cancel</button></a></td>
         </tr>
         {% endfor %}
         </table>
