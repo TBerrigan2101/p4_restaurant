@@ -25,6 +25,7 @@ TIMES = (
 
 )
 
+
 class Menu(models.Model):
     title = models.CharField(max_length=200, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -57,10 +58,10 @@ class Booking(models.Model):
 
 class Review(models.Model):
     name = models.CharField(max_length=50)
-    email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
  
     class Meta:
         ordering = ['created_on']

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking, Review, Menu
+from .models import Booking, Review, Menu, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -21,5 +21,12 @@ class BookingAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_filter = ('name', 'created_on')
-    list_display = ('name', 'email', 'body', 'created_on',)
+    list_filter = ('name', 'created_by')
+    list_display = ('name', 'body', 'created_by')
+    list_display_links = ('name', 'body', 'created_by')
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'message')
+

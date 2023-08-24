@@ -9,6 +9,41 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+# <----- Index Views -----> 
+
+class IndexPage(CreateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = 'index.html'
+
+
+# <----- Review Views -----> 
+
+def see_reviews(request):
+    reviews = Review.objects.filter(approved=True).order_by("-created_on")
+    context = {
+        'reviews': reviews
+        }
+    return render(request, 'review.html', context)  
+        
+        
+def submit_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.created_by = request.user
+            review.save()
+            return redirect('review')
+    form = ReviewForm()
+    context = {
+        'review_form': form
+    }
+    return render(request, 'submit_review.html', context)  
+
+
+# <----- Booking Views -----> 
+
 @login_required(login_url="accounts/login")
 def view_booking(request):
     bookings = Booking.objects.filter(created_by=request.user)
@@ -53,6 +88,15 @@ def delete_booking(request, booking_id):
     return redirect('view_booking')
 
 
+# <----- Contact Views -----> 
+
+class ContactUs(CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = 'contact.html'
+    success_url = '/'
+
+
 class MenuList(generic.ListView):
     model = Menu
     queryset = Menu.objects.filter(status=1).order_by("-created_on")
@@ -60,31 +104,3 @@ class MenuList(generic.ListView):
     paginate_by = 6
 
 
-class IndexPage(CreateView):
-    model = Booking
-    form_class = BookingForm
-    template_name = 'index.html'
-
-
-class LeaveReview(CreateView):
-    model = Review
-    form_class = ReviewForm
-    template_name = 'review.html'
-    success_url = '/'
-    
-    def get(self, request, *args, **kwargs):
-
-        return render(
-            request,
-            "review.html",
-            {
-                "review_form": ReviewForm()
-            },
-        )
-
-class ContactUs(CreateView):
-    model = Contact
-    form_class = ContactForm
-    template_name = 'contact.html'
-    success_url = '/'
-    

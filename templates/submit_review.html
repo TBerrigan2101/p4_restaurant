@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid hero-image-reviews">
+    <div class="opaque-overlay">&nbsp;</div>
+    <div class="row">
+            <div class="col-12">
+                <section class="jumbotron text-center">
+                    <h1 class="display-1">Reviews of Umai</h1>
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                </section>
+            </div>    
+    </div>    
+</div>
+  
+<div class="container container-padding">
+    <div class="card-body">
+                    <!-- For later -->
+                    {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting approval
+                    </div>
+                    {% else %}
+                    {% if user.is_authenticated %}
+    
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post">
+                        {{ review_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+    </div>  
+</div>          
+
+
+{%endblock%}
