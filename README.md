@@ -1,6 +1,13 @@
-# Ghostbusters ESP Test Game
+# UMAI Sushi Restaurant
 
 Live site: https://tberrigan2101.github.io/
+
+
+## Admin Details
+
+ - User: admin
+ - Password: umaipassword
+
 
 ## Project Introduction
 
@@ -22,11 +29,11 @@ For my fourth project I have developed a website for a Dublin Sushi restaurant I
   
 - __Site Layout__
 
-  - The site was created using bootstrap to make things easy to build and edit. I was able to take cues from what had been demonstrated in previous walkthrough projects and use the modular approach of bootstrap to create minimalist, grid-orientated site. 
+  - The site was created using bootstrap to make things easy to build and edit. I was able to take cues from what had been demonstrated in previous walkthrough projects and use the modular approach of bootstrap to create minimalist, grid-orientated site that was also mobile-friendly. 
   
-  A minimalist site navigation bar sites neatly at the top and a large 'Hero Image' appears directly below it on every page of the site to take away from the stark nature of the rest of the site.
+  - A minimalist site navigation bar sites neatly at the top and a large 'Hero Image' appears directly below it on every page of the site to take away from the stark nature of the rest of the site.
 
-  The index page displays the most content as it shows the six dishes that will be served during the 'sushi dining experience' to showcase the presentation skills of the chefs at Umai and to entice and educate would-be-diners.
+  - The index page displays the most content as it shows the six dishes that will be served during the 'sushi dining experience' to showcase the presentation skills of the chefs at Umai and to entice and educate would-be-diners.
 
  __Create an Account__
 
@@ -49,6 +56,8 @@ For my fourth project I have developed a website for a Dublin Sushi restaurant I
 
 - I considered using a blog-like feature for the menu using the Django Blog walkthrough project as a reference. In the 'Jiro Dreams of Sushi' documentary it was mentioned that overfishing and price has an effect on supplies and what the chefs are able to produce. A blog based menu could allow the chefs to add, edit or delete dishes from the set menu easily if they have to.
 
+- I would like to create a more robust reservation feature allowing users and admins to see conflicts with scheduling or restaurant capacity. This was noted by my mentor but I wasn't able to create something that worked. I looked at other examples of booking systems using Django and Python but they were either as simple or too complex for me to replicate without copying it and try to make it work within my framework.
+
 ## 3. Technology Used
 - HTML
 - CSS
@@ -65,39 +74,22 @@ Below are my results from testing the site both structurally and visually.
 ### 4.1 Code Validation
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftberrigan2101.github.io%2Fproject-two%2F)
+  - There was one error and two warnings when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2F8000-tberrigan21-p4restauran-rib48rln8y7.ws-eu104.gitpod.io%2F) but I was able to clear a lot of the earlier problems between the index and base html files.There was a stray end tag which I could not find after indenting the index code and I assuming it is within the bootstrap footer template I used. The warnings were also in the footer but I didn't want to risk altering it too much.
+
+ ![w3 validator results](readme_images/w3_validator.png)
 
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ftberrigan2101.github.io%2Fproject-two%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-
-- Javascript
-  - I passed my code through [JShint](/https://jshint.com/) and I got 21 warnings but when I discussed them with my mentor he said I shouldn't worry about them in the case of this project
-    ![JS Hint Warnings](readme-images/js-hint-warnings.png)
-  - I did get a note on an unused variable but whenever I tried to edit or remove this the game stopped working so I will need to revisit it again to understand what the reason might be.
-    ![JS Hint Unused Variable](readme-images/js-hint-unused-variable.png)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F8000-tberrigan21-p4restauran-rib48rln8y7.ws-eu104.gitpod.io%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 
 ### 4.2 User observations
 
-- The people I tested the site with found the site easy to navigate and it felt relatively intuitive and the content made sense.
+- The people I tested the site with found the site easy to use and navigate. Two comments that were made was that the site seemed a bit thin on pages and that the site could expand to give more information or a story about the restaurant.  They also felt that the reviews could be more than just text and made comparisons to Google reviews where people can add photos or comments could be replied to by admin.
 
-- One of the major issues that was flagged with me was I originally had text buttons for the game options and an image on the left showing the visuals of the icons and users thought this image was interactive so they bypassed the text buttons and clicked on the icon display graphic which wasn't an active button. After that I decided to remove the text buttons from the menu and just use the individual icons as buttons and replaced the player image on the left side wih the Ghostbusters graphic so users would understand what they had to select.
-
-  ![old layout](readme-images/old-layout.png)
 
 ### 4.3 Bugs
 
-   - I had initially designed an 'interval' function to the game where I wanted to replicate Dr. Venkman holding up a new card each time before the player makes their next guess and for this I created a function called 'resetGame'. This function would reset the player and computer images to their original state and would prompt the computer to speak another line from the movie that prepared the user to take another guess ('Clear your head','Nervous?' etc) so the user felt they were taking turns with a new card each time.
-
-
-     ![const interval string](readme-images/const-interval.png)
-     ![reset function](readme-images/reset-function.png)
-
-   - I set a timeout of 2 seconds for resetGame() in the playGame (playerChoice) function so each time the user made a choice the game would reset in two seconds but retain the scores. The correct responses were being generated from the string I createed but the buttons were still live and my mentor pointed out that it wasn't obvious that the player had to wait for the images to reset before taking their next turn and could keep making guesses potentially creating confusion.
-
-   - We discussed different approaches such as trying to temporarily remove the Event Listener from the buttons, adding an overlay to the buttons so the player couldn't access them until the game reset and hiding the div that hid the buttons after each click. 
-
-   - Unfortunately all of my attempts at trying to make this work failed and while I wanted to try and push the game further I felt it was better to remove the 'interval' feature completely as it didn't take anything away from the basic game functionality but leaving it in the game could cause problems for the user.
+   - I don't have any issues as far as I can tell
 
 
 ### 4.4 Supported Screens and Browsers
@@ -106,9 +98,9 @@ Below are my results from testing the site both structurally and visually.
 
 ### 4.5 Performance Testing
 
-- Initial test for the site was good and there were a few small changes to be made, mostly image sizing that I compressed to the point where I thought they wouldn't be compromised. Following those changes I got these results from Lighthouse.
+- Initial test for the site was fair and there were a few small changes to be made, mostly image sizing that I compressed to the point where I thought they wouldn't be compromised. Following those changes I got these results from Lighthouse. What dragged the performance results down was Bootstrap loading and this is something that I will need to educate myself about more to make sites using bootstrap and django run as efficiently as possible. I also tried to improve the accessibility score by altering the colour contrast on the site but it didn't improve, again the issues seemed to be built in to the various add ons I was using which I don't fully understand.
 
-![performance-homepage](readme-images/performance-homepage.png)
+![performance-homepage](readme_images/testing.jpg)
 
 
 
@@ -151,10 +143,6 @@ In this section I will break down the credits for my project.
 - Five of the menu images were taken from [The 9 Most Common Types of Sushi, Explained](https://www.purewow.com/food/types-of-sushi). One more was taken from [Sashimi | BBC Good Foodd](https://www.bbcgoodfood.com/glossary/sashimi-glossary).
 
 - The images of the chefs and the hero images were taken from [Unsplash](https://unsplash.com/).
-
-- The image I used to create the green smoke at the bottom of the page was taken from [here](https://www.pngitem.com/middle/TTJwT_grey-smoke-png-transparent-image-smoke-transparent-background/)
-
-- The icons for the buttons were designed by me in Adobe Illustrator.
 
 
 ### 6.5 Acknowledgements

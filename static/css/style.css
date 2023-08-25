@@ -1,7 +1,7 @@
 /* Body */
 
 body {
-  background-color: #F9FAFC;
+  background-color: #ffffff;
 }
 
 
@@ -112,11 +112,11 @@ body {
   font-family: Lato, sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #4A4A4F;
+  color: #252527;
 }
 
 .red-brand {
-  color: #d9534f;
+  color: #d02d27;
 }
 
 .thin {
@@ -127,7 +127,7 @@ body {
 h1 {
   font-weight: 300;
   text-align: center;
-  color: #d9534f;
+  color: #d02d27;
   padding-bottom: 2%;
 
 }
@@ -135,17 +135,17 @@ h1 {
 h2 {
   font-weight: 300;
   text-align: left;
-  color: #d9534f;
+  color: #d02d27;
 
 }
 
 h3 {
-  color: #d9534f;
+  color: #d02d27;
 
 }
 
 .link {
-  color: #d9534f;
+  color: #d02d27;
 }
 
 .display-1 {
@@ -165,7 +165,7 @@ h3 {
 }
 
 .lead {
-  color: #4A4A4F;
+  color: #28282c;
 }
 
 .white {
@@ -190,5 +190,5 @@ h3 {
 .footer {
   bottom: 0;
   width: 100%;
-  background-color: #282727;
+  background-color: #1d1c1c;
 }

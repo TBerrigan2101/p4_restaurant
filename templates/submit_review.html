@@ -9,30 +9,30 @@
 
 <div class="container-fluid hero-image-reviews">
     <div class="opaque-overlay">&nbsp;</div>
-    <div class="row">
+        <div class="row">
             <div class="col-12">
                 <section class="jumbotron text-center">
                     <h1 class="display-1 text-white">Reviews of Umai</h1>
-                        <p class="display-4 text-white">We want to hear what you have to say.</p>
+                    <p class="display-4 text-white">We want to hear what you have to say.</p>
                 </section>
             </div>    
-    </div>    
+        </div>  
+    </div>   
 </div>
+
+<!-- Form to Submit Review -->
   
 <div class="container container-padding">
     <div class="card-body">
-                    {% if user.is_authenticated %}
-    
-                    <h1 class="display-4">Leave a Review</h1>
-                    <p>Posting as: {{ user.username }}</p>
+        {% if user.is_authenticated %}
+            <h1 class="display-4">Leave a Review</h1>
+                <p>Posting as: {{ user.username }}</p>
                     <form method="post">
                         {{ review_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                     </form>
-                    {% endif %}
-                </div>
-            </div>
+        {% endif %}
     </div>  
 </div>          
 

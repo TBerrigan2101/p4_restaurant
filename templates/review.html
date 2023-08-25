@@ -9,36 +9,36 @@
 
 <div class="container-fluid hero-image-reviews">
     <div class="opaque-overlay">&nbsp;</div>
-    <div class="row">
+        <div class="row">
             <div class="col-12">
                 <section class="jumbotron text-center">
                     <h1 class="display-1 text-white">Reviews of Umai</h1>
                         <p class="display-4 text-white">See what our guests are saying about our Sushi.</p>
                 </section>
             </div>    
+        </div>    
     </div>    
 </div>
   
 
 <div class="container container-padding">
-    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+    <!-- Loops through the reviews submitted -->
     {% for review in reviews %}
-    <div class="comments">
-        <span class="display-4">
-             <!-- The body of the comment goes before the | -->
+        <div class="comments">
+            <span class="display-5">
             {{ review.body | linebreaks }}
             </span>
-            <p class="font-weight-bold red-brand text-uppercase">
-            <!-- The commenter's name goes here. -->
-            {{ review.name }}
-        </p>
-        <hr>
-    </div>
-    <!-- Our for loop ends here -->
+                <p class="font-weight-bold red-brand text-uppercase">
+                {{ review.name }}
+                </p>
+            <hr>
+        </div>
+        <!-- Our for loop ends here -->
     {% endfor %}
-    <div>
-        <h2>Leave a Review</h2>
-        <p>Want to leave a review? Then please <a class="link" href="{% url 'submit_review' %}">click here</a>
+
+<div class="container container-padding">
+    <h2>Leave a Review</h2>
+    <p>Want to leave a review? Then please <a class="link" href="{% url 'submit_review' %}">click here</a>
     </div>
 </div>  
         
