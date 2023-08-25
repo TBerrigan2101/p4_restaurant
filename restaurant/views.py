@@ -2,18 +2,18 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic.edit import CreateView
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Booking, Review, Menu, Contact
+from .models import Booking, Review, Contact
 from .forms import BookingForm, ReviewForm, ContactForm
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
-# <----- Index Views ----->
+# <----- Index Views. Contact was originally on the page but it looked too busy. This view is to keep the page rendering ----->
 
 class IndexPage(CreateView):
-    model = Booking
-    form_class = BookingForm
+    model = Contact
+    form_class = ContactForm
     template_name = 'index.html'
 
 
@@ -25,6 +25,7 @@ def see_reviews(request):
         'reviews': reviews
         }
     return render(request, 'review.html', context)
+
 
 @login_required(login_url="accounts/login")
 def submit_review(request):
@@ -95,10 +96,3 @@ class ContactUs(CreateView):
     form_class = ContactForm
     template_name = 'contact.html'
     success_url = '/'
-
-
-class MenuList(generic.ListView):
-    model = Menu
-    queryset = Menu.objects.filter(status=1).order_by("-created_on")
-    template_name = 'index.html'
-    paginate_by = 6

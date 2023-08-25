@@ -19,7 +19,7 @@ class TestBookingForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('date', form.errors.keys())
         self.assertEqual(form.errors['date'][0], 'This field is required.')
-    
+
     def test_item_time_is_required(self):
         form = BookingForm({'time': ''})
         self.assertFalse(form.is_valid())
@@ -37,22 +37,22 @@ class TestBookingForm(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('phone', form.errors.keys())
         self.assertEqual(form.errors['phone'][0], 'This field is required.')
-    
+
     def test_item_guests_is_required(self):
         form = BookingForm({'guests': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('guests', form.errors.keys())
         self.assertEqual(form.errors['guests'][0], 'This field is required.')
-    
+
     def test_item_message_is_required(self):
         form = BookingForm({'message': ''})
         self.assertFalse(form.is_valid())
         self.assertIn('message', form.errors.keys())
         self.assertEqual(form.errors['message'][0], 'This field is required.')
-        
+
     def test_fields_are_explicit_in_form_metaclass(self):
         form = BookingForm()
-        self.assertEqual(form.Meta.fields, ['name', 'date', 'time', 'email', 'phone', 'guests', 'message'])
+        self.assertEqual(form.Meta.fields, ('name', 'date', 'time', 'email', 'phone', 'guests', 'message'))
 
 
 # Review Form Tests
@@ -73,7 +73,7 @@ class TestReviewForm(TestCase):
 
     def test_fields_are_explicit_in_form_metaclass(self):
         form = ReviewForm()
-        self.assertEqual(form.Meta.fields, ['name', 'body'])
+        self.assertEqual(form.Meta.fields, ('name', 'body'))
 
 
 # Contact Form Tests
@@ -106,4 +106,4 @@ class TestContactForm(TestCase):
 
     def test_fields_are_explicit_in_form_metaclass(self):
         form = ContactForm()
-        self.assertEqual(form.Meta.fields, ['name', 'email', 'subject', 'message'])
+        self.assertEqual(form.Meta.fields, ('name', 'email', 'subject', 'message'))

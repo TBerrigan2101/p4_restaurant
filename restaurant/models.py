@@ -32,7 +32,7 @@ class Booking(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=50)
-    guests = models.IntegerField(default='')
+    guests = models.IntegerField(default='1')
     date = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIMES, default="3 PM")
     message = models.TextField()
@@ -68,21 +68,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
-
-
-# <----- Menu Model (NOT IN USE) ----->
-
-class Menu(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-
-    class Meta:
-        ordering = ["-created_on"]
-
-    def __str__(self):
-        return self.title

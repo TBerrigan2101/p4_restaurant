@@ -65,7 +65,9 @@ For my fourth project I have developed a website for a Dublin Sushi restaurant I
 - CSS
 - Javascript
 - Bootstrap
+- Python
 - Django
+- Relational Databasex
 
 
 ## 4. Testing 
