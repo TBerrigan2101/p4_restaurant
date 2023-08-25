@@ -4,7 +4,6 @@ body {
   background-color: #ffffff;
 }
 
-
 /* Jumbotron and Jumbotron Stylings */
 
 .jumbotron {
@@ -105,6 +104,23 @@ body {
   padding-bottom: 5%;
 }
 
+.hero-image-contact {
+  height: 50vh;
+
+  background: url('../images/sushi3.jpg') no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  padding-bottom: 5%;
+}
+
 
 /* Typography */
 
@@ -162,6 +178,12 @@ h3 {
 
 .display-4 {
   font-weight: 100;
+
+}
+
+.display-5 {
+  font-weight: 100;
+  color: #252527;
 }
 
 .lead {
@@ -191,4 +213,30 @@ h3 {
   bottom: 0;
   width: 100%;
   background-color: #1d1c1c;
+}
+
+
+@media screen and (max-width: 600px) {
+
+.display-1 {
+  font-weight: 100;
+  font-size: 14vw;
+}
+
+.display-2 {
+  font-weight: 100;
+  font-size: 12vw;
+}
+
+.display-3 {
+  font-weight: 100;
+  font-size: 10vw;
+}
+
+.display-4 {
+  font-weight: 100;
+  font-size: 8vw;
+
+}
+
 }

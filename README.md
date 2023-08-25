@@ -2,6 +2,8 @@
 
 Live site: https://tberrigan2101.github.io/
 
+ ![device mock up](readme_images/mockups.jpg)
+
 
 ## Admin Details
 

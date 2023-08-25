@@ -25,9 +25,9 @@
     <!-- Loops through the reviews submitted -->
     {% for review in reviews %}
         <div class="comments">
-            <span class="display-5">
+            <h2 class="display-5">
             {{ review.body | linebreaks }}
-            </span>
+            </h2>
                 <p class="font-weight-bold red-brand text-uppercase">
                 {{ review.name }}
                 </p>
