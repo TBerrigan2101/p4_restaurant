@@ -75,7 +75,7 @@ For my fourth project I have developed a website for a Dublin Sushi restaurant I
 
 - I considered using a blog-like feature for the menu using the Django Blog walkthrough project as a reference. In the 'Jiro Dreams of Sushi' documentary it was mentioned that overfishing and price has an effect on supplies and what the chefs are able to produce. A blog based menu could allow the chefs to add, edit or delete dishes from the set menu easily if they have to.
 
-- I would prefer to have the reviews and the option to leave a review on one page like the walkthrough blog project as going through two pages seems a bit clunky in terms of user experience. I know that this can only using class based views and I struggled to get me head around how they worked which is why the feature ended up the way it did using fucntion based views across two pages.
+- I would prefer to have the reviews and the option to leave a review on one page like the walkthrough blog project as going through two pages seems a bit clunky in terms of user experience. I know that this can only using class based views and I struggled to get me head around how they worked which is why the feature ended up the way it did using function based views across two pages.
 
 - I would like to create a more robust reservation feature allowing users and admins to see conflicts with scheduling or restaurant capacity. This was noted by my mentor but I wasn't able to create something that worked. I looked at other examples of booking systems using Django and Python but they were either as simple or too complex for me to replicate without copying it and try to make it work within my framework.
 
@@ -86,7 +86,7 @@ For my fourth project I have developed a website for a Dublin Sushi restaurant I
 - Bootstrap
 - Python
 - Django
-- Relational Databasex
+- Relational Database
 
 
 ## 5. Testing 
@@ -140,7 +140,7 @@ In this section I will break down the credits for my project.
 
 - I reused some of the bootstrap elements from the [Bootstrapping Your Next Big Idea With Bootstrap 4](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+BWB101+2021_T1/courseware/a2e690a737944c14afc3d6087ff1c3da/937785fc71da4c68b9978bb9695def4f/) example project from Code Institute.
 
-- I rereused some of the html layout for the comments section from the [I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/) walkthrough project from Code Institute.
+- I reused some of the html layout for the comments section from the [I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/) walkthrough project from Code Institute.
 
 - I took inspiration for the booking feature by repurposing the approach of the ToDo app from the [Hello Django](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/dc049b343a9b474f8d75822c5fda1582/685f99dc7b6c41e497b402adbc97dfaa/?child=first) demonstration project from Code Institute.
 
@@ -157,7 +157,7 @@ In this section I will break down the credits for my project.
 
 ### 7.4 Media
 
-- Five of the menu images were taken from [The 9 Most Common Types of Sushi, Explained](https://www.purewow.com/food/types-of-sushi). One more was taken from [Sashimi | BBC Good Foodd](https://www.bbcgoodfood.com/glossary/sashimi-glossary).
+- Five of the menu images were taken from [The 9 Most Common Types of Sushi, Explained](https://www.purewow.com/food/types-of-sushi). One more was taken from [Sashimi | BBC Good Food](https://www.bbcgoodfood.com/glossary/sashimi-glossary).
 
 - The images of the chefs and the hero images were taken from [Unsplash](https://unsplash.com/).
 
