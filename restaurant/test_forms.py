@@ -6,6 +6,7 @@ from .forms import BookingForm, ReviewForm, ContactForm
 
 # Booking Form Tests
 
+# Working
 class TestBookingForm(TestCase):
 
     def test_item_name_is_required(self):
@@ -56,6 +57,7 @@ class TestBookingForm(TestCase):
 
 
 # Review Form Tests
+# Working
 
 class TestReviewForm(TestCase):
 
@@ -77,6 +79,7 @@ class TestReviewForm(TestCase):
 
 
 # Contact Form Tests
+# Working
 
 class TestContactForm(TestCase):
 
