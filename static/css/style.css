@@ -25,7 +25,7 @@ body {
 .hero-image-home {
   height: 50vh;
 
-  background: url('../images/food3.jpg') no-repeat center center fixed;
+  background: url('/media/food3.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
